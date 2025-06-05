@@ -25,15 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Product Listing
 ![Alt Text](screenshots/Product Listing.png)
-=====================================================================================================================================================
+
 ## Search Box Functionality
 ![Alt Text](screenshots/Search Box Functionality.png)
-=====================================================================================================================================================
+
 ## Price Filter Functionality
 ![Alt Text](screenshots/Price Filter Functionality.png)
-=====================================================================================================================================================
+
 ## Cart Page UI
 ![Alt Text](screenshots/Cart Page UI.png)
-=====================================================================================================================================================
+
 ## Mockoon APIs
 ![Alt Text](screenshots/Mockoon APIs.png)
+
