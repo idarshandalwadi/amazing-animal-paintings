@@ -1,0 +1,19 @@
+/* Structure */
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.thumbnail-square {
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.thumbnail-square:hover {
+    transform: scale(2.05);
+    cursor: pointer;
+}

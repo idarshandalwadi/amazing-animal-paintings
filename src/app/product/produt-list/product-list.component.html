@@ -1,0 +1,39 @@
+<div class="d-flex flex-row justify-content-between">
+  <h2>Available Products</h2>
+  <!-- To Search product using name. -->
+  <mat-form-field class="search-text me-5">
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search...">
+    <!-- Another option to access direct value without using event -->
+    <!-- <input matInput #searchBox (keyup)="applyFilter(searchBox.value)" placeholder="Search..."> -->
+  </mat-form-field>
+  <!-- To filter product with pricing. -->
+  <mat-form-field class="search-text me-5">
+    <mat-select [(value)]="sortOrder" (selectionChange)="sortProducts($event.value)">
+      <mat-option value="filter">Filter</mat-option>
+      <mat-option value="priceLowHigh" >Price Low To High</mat-option>
+      <mat-option value="priceHighLow">Price High To Low</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<hr />
+
+<div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="center center">
+  <ul *ngFor="let product of filteredProducts">
+    <mat-card class="product-card">
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <!-- <div class="animal-avatar" [style.background-image]="'url(assets/animal-paintings/' + product.image_url + ')'"></div> -->
+      <mat-card-header>
+        <span>{{product.name}}</span>
+      </mat-card-header>
+      <img [src]="'assets/animal-paintings/' + product.image_url" />
+      <mat-card-footer>{{product.price | currency: 'INR'}}</mat-card-footer>
+      <mat-card-actions fxLayoutAlign="space-between">
+        <mat-icon aria-hidden="false" (click)="markAsFavorite(product)" matTooltip="Mark as Favorite" color="accent"
+          [fontIcon]="product.is_favorite ? 'favorite' : 'favorite_border'"></mat-icon>
+        <mat-icon aria-hidden="false" (click)="addToCart(product)" matTooltip="Add to cart"
+          fontIcon="add_shopping_cart"></mat-icon>
+      </mat-card-actions>
+    </mat-card>
+  </ul>
+</div>
